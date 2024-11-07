@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.yakovliam'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral().content {
+        excludeModule("javax.media", "jai_core")
+    }
+
+    mavenLocal()
+
+    maven {
+        url "https://repo.osgeo.org/repository/geotools-releases/"
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.locationtech.jts/jts-core
+    implementation 'org.locationtech.jts:jts-core:1.20.0'
+    // https://mvnrepository.com/artifact/org.wololo/jts2geojson
+    implementation 'org.wololo:jts2geojson:0.18.1'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    implementation 'org.slf4j:slf4j-simple:2.0.16'
+    // https://mvnrepository.com/artifact/org.geotools/gt-main
+    implementation 'org.geotools:gt-main:32.0'
+}
+
+test {
+    useJUnitPlatform()
+}
