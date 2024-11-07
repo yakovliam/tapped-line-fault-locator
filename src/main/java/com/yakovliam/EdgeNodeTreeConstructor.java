@@ -34,11 +34,6 @@ public class EdgeNodeTreeConstructor {
       org.slf4j.LoggerFactory.getLogger(EdgeNodeTreeConstructor.class);
 
   public EdgeNode constructEdgeNodeTree(MultiLineString geometry, Point startingPoint) {
-    /*
-     * 1. Node the LineStrings
-     *    - This ensures that the LineStrings do not cross and are properly split
-     */
-
     List<LineString> lineStrings = new ArrayList<>();
     for (int i = 0; i < geometry.getNumGeometries(); i++) {
       LineString lineString = (LineString) geometry.getGeometryN(i);
