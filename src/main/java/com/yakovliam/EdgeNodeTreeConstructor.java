@@ -15,10 +15,6 @@ import org.wololo.jts2geojson.GeoJSONWriter;
 
 /**
  * Context:
- * We are passing in power grid line geometries and a starting point to locate faults in the power
- * grid. The power grid line geometries are represented as a MultiLineString. The starting point is
- * a Point. The distance is a double.
- * <p>
  * We are operating under the assumption that the MultiLineString contains many LineStrings,
  * all are connected somehow.
  * E.g. The end of line A splits into the beginning of line B and line C,
